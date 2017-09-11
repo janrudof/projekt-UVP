@@ -106,7 +106,7 @@ class Vislice:
             self.iskana_beseda.config(text=posodobljena_beseda)
 
     def risanje_visli(self):
-        '''Če črke ni v besedi, se nariše ena poteza.'''
+        '''Če črke ni v besedi, se nariše ena poteza vislice.'''
         if self.ugibana_beseda.stevilo_napak() == 0:
             self.platno.create_line(50,300,150,300, width=2, activefill='red')
         elif self.ugibana_beseda.stevilo_napak() == 1:
