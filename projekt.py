@@ -45,7 +45,7 @@ class UgibanjeBesede:
                     self.seznam_iskane_besede[i] = izbrana_crka
                     if self.seznam_iskane_besede == self.seznam_besede:
                         return 'Zmagal si! Pravilna beseda je {}.'.format(self.beseda)
-            return ''.join(self.seznam_iskane_besede)
+            return ' '.join(self.seznam_iskane_besede)
         else:
             if self.stevilo_napacnih_poskusov == 10:
                 return 'Konec igre. Pravilna beseda je {}.'.format(self.beseda)
