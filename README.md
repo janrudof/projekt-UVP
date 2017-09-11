@@ -1,2 +1,3 @@
-# projekt-UVP
-Igrica Vislice
+# Projekt-UVP
+Igrica vislice
+---------------
