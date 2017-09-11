@@ -1,3 +1,5 @@
 # Projekt-UVP
-Igrica vislice
+Vislice
 ---------------
+
+Igrica Vislice kot projektno delo za predmet Uvod v programiranje.
