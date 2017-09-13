@@ -16,6 +16,7 @@ class UgibanjeBesede:
         self.beseda = nakljucno_izberi_besedo()
         self.seznam_besede = [] #crke iskane besede v seznamu
         self.seznam_iskane_besede = []#crke, ki smo ze ugotovili v seznamu
+        self.napacne_crke = []
         self.stevilo_napacnih_poskusov = 0
         for znak in self.beseda:
             self.seznam_besede.append(znak)
@@ -49,9 +50,15 @@ class UgibanjeBesede:
         else:
             if self.stevilo_napacnih_poskusov == 10:
                 return 'Konec igre. Pravilna beseda je {}.'.format(self.beseda)
+            elif izbrana_crka in self.napacne_crke:
+                return ' '.join(self.seznam_iskane_besede)
             else:
+                self.napacne_crke.append(izbrana_crka)
                 self.stevilo_napacnih_poskusov += 1
                 return ' '.join(self.seznam_iskane_besede)
+    def napacne_uporbljene_crke(self):
+        '''Vrne seznam že uporabljenih napačnih črk.'''
+        return self.napacne_crke
 
     def stevilo_napak(self):
         '''Hočemo, da nam vrne število napak, da lahko rišemo.'''
@@ -97,6 +104,8 @@ class Vislice:
             if izbrana_crka in self.ugibana_beseda.izbrana_beseda():
                 self.stevilo_pravilnih_crk.add(izbrana_crka)
                 self.podvrstica.config(text= 'Pravilno!', fg= 'green')
+            elif izbrana_crka in self.ugibana_beseda.napacne_uporbljene_crke():
+                self.podvrstica.config(text='Črko si že uporabil.', fg='red')
             else:
                 self.stevilo_napacnih_crk += 1
                 self.risanje_visli()
