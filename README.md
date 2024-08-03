@@ -2,4 +2,4 @@
 Vislice
 ---------------
 
-Igrica Vislice kot projektno delo za predmet Uvod v programiranje.
+Igrica Vislice kot projektno delo za predmet Uvod v programiranje. 
